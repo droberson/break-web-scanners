@@ -43,7 +43,7 @@ for fakefile in $(cat files); do
     if [ ! -e "$1/${fakefile}" ]; then
 	echo "[+] Creating file $1/${fakefile}"
 
-	cat /dev/urandom | tr -dc " !@#$%^&*<>()-_=+[]{}A-Za-z0-8\n\r\t" \
+	cat /dev/urandom | tr -dc " !@#$%^&*<>()-_=+[]{}A-Za-z0-9\n\r\t" \
 	    | head -c $(($RANDOM % 4096)) > "$1/${fakefile}"
     fi
 done
